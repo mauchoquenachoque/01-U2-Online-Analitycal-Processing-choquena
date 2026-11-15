@@ -2,7 +2,7 @@
 
 [![Deploy to GitHub Pages](https://github.com/mauchoquenachoque/01-U2-Online-Analitycal-Processing-choquena/actions/workflows/deploy.yml/badge.svg)](https://github.com/mauchoquenachoque/01-U2-Online-Analitycal-Processing-choquena/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Dev.to Article](https://img.shields.io/badge/Dev.to-Article%20Published-brightgreen)](DEVTO_ARTICLE.md)
+[![Dev.to Article](https://img.shields.io/badge/Dev.to-Article%20Published-brightgreen)](https://dev.to/mauricio_arianchoqueac/dominando-el-procesamiento-analitico-en-linea-olap-de-la-teoria-multidimensional-al-despliegue-1pge)
 [![100% Free & Open Source](https://img.shields.io/badge/Dependencies-100%25%20FOSS-emerald)](https://opensource.org/)
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-informational)](https://mauchoquenachoque.github.io/01-U2-Online-Analitycal-Processing-choquena/)
 
@@ -11,7 +11,7 @@ Plataforma interactiva de **Procesamiento Analítico en Línea (OLAP)** construi
 > 🎓 **Asignatura:** Actividad Grupal 01-U2: Online Analytical Processing  
 > 👤 **Autor:** Mau Choquena Choque & Equipo  
 > 🌐 **Despliegue Público (Cloud SaaS):** [https://mauchoquenachoque.github.io/01-U2-Online-Analitycal-Processing-choquena/](https://mauchoquenachoque.github.io/01-U2-Online-Analitycal-Processing-choquena/)  
-> 📝 **Artículo Técnico en Dev.to:** [Ver Artículo Completo en Markdown (DEVTO_ARTICLE.md)](DEVTO_ARTICLE.md)
+> 📝 **Artículo Técnico en Dev.to:** https://dev.to/mauricio_arianchoqueac/dominando-el-procesamiento-analitico-en-linea-olap-de-la-teoria-multidimensional-al-despliegue-1pge
 
 ---
 
