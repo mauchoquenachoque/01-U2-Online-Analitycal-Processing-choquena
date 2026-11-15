@@ -1,0 +1,67 @@
+name: Deploy OLAP Studio 360 to GitHub Pages (Public Cloud SaaS)
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Permisos requeridos para desplegar en GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Trabajo 1: Verificación y Validación de Calidad
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Código Fuente
+        uses: actions/checkout@v4
+
+      - name: Validar Estructura de Archivos
+        run: |
+          echo "Verificando componentes esenciales del motor OLAP..."
+          test -f index.html || exit 1
+          test -f js/olap-engine.js || exit 1
+          test -f js/data.js || exit 1
+          test -f js/app.js || exit 1
+          test -f css/styles.css || exit 1
+          echo "Todos los componentes verificados con éxito."
+
+      - name: Prueba de Sintaxis Python (Engine de Referencia)
+        run: |
+          python3 -m py_compile olap_cube.py app.py
+          echo "Validación de sintaxis Python completada."
+
+  # Trabajo 2: Despliegue Automatizado a GitHub Pages (Public Cloud)
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout Código Fuente
+        uses: actions/checkout@v4
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Empaquetar Artefacto Web
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Desplegar en la Nube Pública (GitHub Pages CDN)
+        id: deployment
+        uses: actions/deploy-pages@v4

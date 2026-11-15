@@ -1,0 +1,7 @@
+# Requerimientos para OLAP Studio 360
+# Este proyecto está diseñado para funcionar con CERO dependencias externas obligatorias
+# Todas las librerías son 100% Libres y de Código Abierto (FOSS)
+
+# Opcional (si se desea extender con Pandas o Jupyter Notebook):
+# pandas>=2.0.0
+# openpyxl>=3.1.0
